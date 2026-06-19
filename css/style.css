@@ -1,0 +1,278 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f5f7;
+  color: #222;
+}
+
+.contenedor {
+  width: 92%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header {
+  background: #102a43;
+  color: white;
+  padding: 28px 0;
+}
+
+.header-contenido {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0 0 8px 0;
+}
+
+.header p {
+  margin: 0;
+  color: #d9e2ec;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 18px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.intro {
+  margin: 28px 0;
+  background: white;
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.alerta {
+  background: #fff3cd;
+  border-left: 5px solid #ffc107;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.card {
+  background: white;
+  margin: 24px 0;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.titulo-seccion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.grid-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.grupo {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+input {
+  padding: 11px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+input:focus {
+  outline: 2px solid #4dabf7;
+  border-color: #4dabf7;
+}
+
+.input-error {
+  border-color: #dc3545;
+  background: #fff5f5;
+}
+
+.error {
+  color: #dc3545;
+  min-height: 18px;
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.mensaje-info {
+  background: #e7f5ff;
+  color: #1864ab;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+}
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.producto {
+  border: 1px solid #d8dee9;
+  border-radius: 12px;
+  padding: 16px;
+  background: #fafafa;
+}
+
+.producto h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+}
+
+.producto p {
+  margin: 6px 0;
+}
+
+.precio {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0b7285;
+}
+
+.stock {
+  color: #495057;
+  font-size: 14px;
+}
+
+.cantidad {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.resumen-caja {
+  border: 1px solid #d8dee9;
+  border-radius: 10px;
+  padding: 16px;
+  background: #fbfbfb;
+}
+
+.item-resumen {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e9ecef;
+  padding: 8px 0;
+  gap: 10px;
+}
+
+.total {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+}
+
+.btn-principal,
+.btn-secundario {
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-principal {
+  margin-top: 20px;
+  background: #0b7285;
+  color: white;
+  width: 100%;
+}
+
+.btn-principal:hover {
+  background: #095c6b;
+}
+
+.btn-secundario {
+  background: #e9ecef;
+  color: #222;
+}
+
+.btn-secundario:hover {
+  background: #dee2e6;
+}
+
+.mensaje-formulario {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  display: none;
+}
+
+.mensaje-formulario.ok {
+  display: block;
+  background: #d3f9d8;
+  color: #2b8a3e;
+}
+
+.mensaje-formulario.error-global {
+  display: block;
+  background: #ffe3e3;
+  color: #c92a2a;
+}
+
+.oculto {
+  display: none;
+}
+
+.footer {
+  text-align: center;
+  padding: 24px;
+  margin-top: 30px;
+  color: #555;
+}
+
+@media (max-width: 900px) {
+  .productos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-form {
+    grid-template-columns: 1fr;
+  }
+
+  .header-contenido {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a {
+    margin-left: 0;
+    margin-right: 14px;
+  }
+}
+
+@media (max-width: 520px) {
+  .productos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .titulo-seccion {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

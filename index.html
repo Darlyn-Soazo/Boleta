@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda Demo - Boleta por Correo</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="contenedor header-contenido">
+      <div>
+        <h1>Tienda Demo</h1>
+        <p>Ejemplo con GitHub Pages, JSON local, JavaScript y envío por correo.</p>
+      </div>
+      <nav>
+        <a href="#productos">Productos</a>
+        <a href="#boleta">Boleta</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contenedor">
+
+    <section class="intro">
+      <h2>Simulación de venta con base de datos local</h2>
+      <p>
+        Los productos se cargan desde el archivo <strong>data/productos.json</strong>.
+        El usuario selecciona cantidades, JavaScript calcula el total y la información se envía por correo como comprobante simple.
+      </p>
+      <p class="alerta">
+        Importante: esto es una boleta o comprobante de prueba, no una boleta tributaria legal.
+      </p>
+    </section>
+
+    <form id="formBoleta" action="https://formsubmit.co/TU_CORREO@EMAIL.COM" method="POST">
+
+      <!-- CONFIGURACIÓN FORMSUBMIT -->
+      <input type="hidden" name="_subject" value="Nueva boleta generada desde GitHub Pages">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+
+      <!-- 
+        Opcional:
+        Cuando publiques en GitHub Pages, reemplaza la URL y descomenta esta línea.
+        <input type="hidden" name="_next" value="https://TU_USUARIO.github.io/TU_REPOSITORIO/gracias.html">
+      -->
+
+      <!-- DATOS OCULTOS QUE SE ENVIARÁN AL CORREO -->
+      <input type="hidden" id="numeroBoleta" name="numero_boleta">
+      <input type="hidden" id="fechaBoleta" name="fecha_boleta">
+      <input type="hidden" id="totalBoleta" name="total_boleta">
+      <textarea id="detalleBoleta" name="detalle_boleta" class="oculto"></textarea>
+
+      <section class="card" id="datos-cliente">
+        <h2>Datos del cliente</h2>
+
+        <div class="grid-form">
+          <div class="grupo">
+            <label for="cliente">Nombre del cliente</label>
+            <input type="text" id="cliente" name="cliente" placeholder="Ej: Juan Pérez">
+            <small class="error" id="errorCliente"></small>
+          </div>
+
+          <div class="grupo">
+            <label for="email">Correo del cliente</label>
+            <input type="email" id="email" name="email_cliente" placeholder="Ej: cliente@email.com">
+            <small class="error" id="errorEmail"></small>
+          </div>
+
+          <div class="grupo">
+            <label for="telefono">Teléfono</label>
+            <input type="text" id="telefono" name="telefono_cliente" placeholder="Ej: 912345678">
+            <small class="error" id="errorTelefono"></small>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" id="productos">
+        <div class="titulo-seccion">
+          <h2>Productos disponibles</h2>
+          <button type="button" id="btnLimpiar" class="btn-secundario">Limpiar selección</button>
+        </div>
+
+        <div id="mensajeCarga" class="mensaje-info">Cargando productos...</div>
+        <div id="listaProductos" class="productos-grid"></div>
+        <small class="error" id="errorProductos"></small>
+      </section>
+
+      <section class="card" id="boleta">
+        <h2>Resumen de boleta</h2>
+
+        <div class="resumen-caja">
+          <div id="resumenCompra">
+            <p>No hay productos seleccionados.</p>
+          </div>
+
+          <div class="total">
+            <span>Total:</span>
+            <strong id="totalVisual">$0</strong>
+          </div>
+        </div>
+
+        <div id="mensajeFormulario" class="mensaje-formulario"></div>
+
+        <button type="submit" class="btn-principal">
+          Enviar boleta por correo
+        </button>
+      </section>
+
+    </form>
+
+  </main>
+
+  <footer class="footer">
+    <p>Actividad demo: HTML + CSS + JS + JSON + GitHub Pages + FormSubmit</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "nombre": "Mouse Gamer",
+    "precio": 12990,
+    "stock": 10,
+    "categoria": "Periféricos"
+  },
+  {
+    "id": 2,
+    "nombre": "Teclado Mecánico",
+    "precio": 29990,
+    "stock": 8,
+    "categoria": "Periféricos"
+  },
+  {
+    "id": 3,
+    "nombre": "Audífonos USB",
+    "precio": 19990,
+    "stock": 12,
+    "categoria": "Audio"
+  },
+  {
+    "id": 4,
+    "nombre": "Pad Mouse XL",
+    "precio": 5990,
+    "stock": 20,
+    "categoria": "Accesorios"
+  },
+  {
+    "id": 5,
+    "nombre": "Cable HDMI",
+    "precio": 7990,
+    "stock": 15,
+    "categoria": "Cables"
+  },
+  {
+    "id": 6,
+    "nombre": "Pendrive 64GB",
+    "precio": 8990,
+    "stock": 18,
+    "categoria": "Almacenamiento"
+  },
+  {
+    "id": 7,
+    "nombre": "Webcam HD",
+    "precio": 24990,
+    "stock": 6,
+    "categoria": "Video"
+  },
+  {
+    "id": 8,
+    "nombre": "Parlantes USB",
+    "precio": 14990,
+    "stock": 9,
+    "categoria": "Audio"
+  }
+]
